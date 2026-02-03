@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>건강서랍 - 건강운동관리사 문제은행</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- 헤더 -->
+        <header class="header">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>건강서랍</span>
+                </div>
+                <nav class="nav">
+                    <a href="#dashboard" class="nav-link">대시보드</a>
+                    <a href="#subjects" class="nav-link">과목</a>
+                    <a href="#notes" class="nav-link">마이노트</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="main">
+            <!-- 히어로 섹션 -->
+            <section class="hero">
+                <div class="container">
+                    <h1>당신의 합격을 위한 <span class="highlight">가장 스마트한</span> 문제은행</h1>
+                    <p>건강운동관리사 시험 대비 전문 문제은행</p>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="과목 또는 키워드 검색...">
+                        <button class="btn-primary">시작하기</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 통계 섹션 -->
+            <section class="stats" id="dashboard">
+                <div class="container">
+                    <h2>나의 학습 현황</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <i class="fas fa-book-open"></i>
+                            <div class="stat-info">
+                                <span class="stat-number">1,247</span>
+                                <span class="stat-label">총 푼 문제 수</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="stat-info">
+                                <span class="stat-number">87%</span>
+                                <span class="stat-label">전체 정답률</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-fire"></i>
+                            <div class="stat-info">
+                                <span class="stat-number">15일</span>
+                                <span class="stat-label">연속 학습</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <div class="stat-info">
+                                <span class="stat-number">42시간</span>
+                                <span class="stat-label">누적 학습</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 과목 섹션 -->
+            <section class="subjects" id="subjects">
+                <div class="container">
+                    <h2>과목별 문제 풀이</h2>
+                    <div class="subjects-grid">
+                        <div class="subject-card" onclick="startQuiz('운동생리학')">
+                            <div class="subject-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h3>운동생리학</h3>
+                            <p>운동 시 인체의 생리적 반응과 적응</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                            <span class="progress-text">15/20 완료</span>
+                        </div>
+
+                        <div class="subject-card" onclick="startQuiz('건강체력평가')">
+                            <div class="subject-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>건강체력평가</h3>
+                            <p>체력 측정 및 평가 방법</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                            </div>
+                            <span class="progress-text">12/20 완료</span>
+                        </div>
+
+                        <div class="subject-card" onclick="startQuiz('운동처방론')">
+                            <div class="subject-icon">
+                                <i class="fas fa-prescription"></i>
+                            </div>
+                            <h3>운동처방론</h3>
+                            <p>개인별 운동 프로그램 설계</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 45%"></div>
+                            </div>
+                            <span class="progress-text">9/20 완료</span>
+                        </div>
+
+                        <div class="subject-card" onclick="startQuiz('운동부하검사')">
+                            <div class="subject-icon">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <h3>운동부하검사</h3>
+                            <p>운동부하검사의 원리와 방법</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 30%"></div>
+                            </div>
+                            <span class="progress-text">6/20 완료</span>
+                        </div>
+
+                        <div class="subject-card" onclick="startQuiz('운동상해')">
+                            <div class="subject-icon">
+                                <i class="fas fa-band-aid"></i>
+                            </div>
+                            <h3>운동상해</h3>
+                            <p>운동 관련 상해의 예방과 치료</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 55%"></div>
+                            </div>
+                            <span class="progress-text">11/20 완료</span>
+                        </div>
+
+                        <div class="subject-card" onclick="startQuiz('기능해부학')">
+                            <div class="subject-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h3>기능해부학</h3>
+                            <p>운동과 관련된 인체 구조</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                            <span class="progress-text">14/20 완료</span>
+                        </div>
+
+                        <div class="subject-card" onclick="startQuiz('병태생리학')">
+                            <div class="subject-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h3>병태생리학</h3>
+                            <p>질병 상태에서의 생리적 변화</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                            <span class="progress-text">17/20 완료</span>
+                        </div>
+
+                        <div class="subject-card" onclick="startQuiz('스포츠심리학')">
+                            <div class="subject-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>스포츠심리학</h3>
+                            <p>운동과 스포츠의 심리적 요인</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 40%"></div>
+                            </div>
+                            <span class="progress-text">8/20 완료</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 마이노트 섹션 -->
+            <section class="notes" id="notes">
+                <div class="container">
+                    <h2>마이노트</h2>
+                    <div class="notes-grid">
+                        <div class="note-card">
+                            <h3>오답 노트</h3>
+                            <p>틀린 문제 <span class="highlight">23개</span></p>
+                            <button class="btn-secondary">복습하기</button>
+                        </div>
+                        <div class="note-card">
+                            <h3>북마크</h3>
+                            <p>저장된 문제 <span class="highlight">15개</span></p>
+                            <button class="btn-secondary">확인하기</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="footer">
+            <div class="container">
+                <p>© 2026 건강서랍. 건강운동관리사 시험 대비 전문 서비스</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 퀴즈 모달 -->
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="quiz-subject">과목명</h2>
+            <div class="quiz-container">
+                <div class="question-header">
+                    <span class="question-number">문제 1/20</span>
+                    <span class="timer">05:00</span>
+                </div>
+                <div class="question-content">
+                    <h3>다음 중 운동생리학의 기본 원리로 옳은 것은?</h3>
+                    <div class="options">
+                        <button class="option" onclick="selectAnswer(1)">1. 과부하의 원리</button>
+                        <button class="option" onclick="selectAnswer(2)">2. 특이성의 원리</button>
+                        <button class="option" onclick="selectAnswer(3)">3. 가역성의 원리</button>
+                        <button class="option" onclick="selectAnswer(4)">4. 모든 것이 옳다</button>
+                    </div>
+                </div>
+                <div class="explanation" id="explanation" style="display: none;">
+                    <h4>해설</h4>
+                    <p>운동생리학의 기본 원리에는 과부하의 원리, 특이성의 원리, 가역성의 원리가 모두 포함됩니다...</p>
+                </div>
+                <div class="quiz-actions">
+                    <button class="btn-secondary" onclick="prevQuestion()">이전</button>
+                    <button class="btn-primary" onclick="nextQuestion()">다음</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
